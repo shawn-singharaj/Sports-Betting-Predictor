@@ -2,3 +2,6 @@ Wed 10/29:
 1. Pytorch tutorial
 2. Find data on NBA stats / API keys?
 3. Research on prediction algorithms, how are stats and odds made and things like win probability.
+
+Soon-ish preferrably:
+Understand NumPy, Matplotlib, Pandas, and Sci-kit learn libraries
