@@ -1,7 +1,10 @@
-Wed 10/29:
+Wed 11/3:
 1. Pytorch tutorial
-2. Find data on NBA stats / API keys?
-3. Research on prediction algorithms, how are stats and odds made and things like win probability.
+2. What data parameters to use to insert in the regression model; e.g. injuries, player form, opponent form, advanced stats, etc.
+4. Organize data into a table, for points for example, use the same number of parameters every time? 
+  One column = opponent team, row column = ppg in the past vs team
+5. Regression model to make predictions
+
 
 Soon-ish preferrably:
 Understand NumPy, Matplotlib, Pandas, and Sci-kit learn libraries
