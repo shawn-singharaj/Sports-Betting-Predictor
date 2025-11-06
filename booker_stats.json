@@ -1,0 +1,62 @@
+
+[
+    {
+        "Game": 8,
+        "Opponent": "GSW",
+        "Prev_5_Points": 32.2,
+        "Prev_5_FG%": 53.3,
+        "Prev_5_3P%": 57,
+        "Opp_Def_Rating": 109.6,
+        "Is_Home": 0,
+        "Over_Under": 28.5,
+        "Label": 1
+    },
+
+    {
+        "Game": 7,
+        "Opponent": "SAS",
+        "Prev_5_Points": 30.2,
+        "Prev_5_FG%": 50,
+        "Prev_5_3P%": 42,
+        "Opp_Def_Rating": 106.1,
+        "Is_Home": 0,
+        "Over_Under": 29.5,
+        "Label": 0
+    },
+
+    {
+        "Game": 6,
+        "Opponent": "UTA",
+        "Prev_5_Points": 29.2,
+        "Prev_5_FG%": 49.2,
+        "Prev_5_3P%": 35.3,
+        "Opp_Def_Rating": 107.3,
+        "Is_Home": 1,
+        "Over_Under": 28.5,
+        "Label": 1
+    },
+
+    {
+    "Game": 5,
+    "Opponent": "MEM",
+    "Prev_5_Points": 26.4,
+    "Prev_5_FG%": 51.8,
+    "Prev_5_3P%": 46,
+    "Opp_Def_Rating": 108.8,
+    "Is_Home": 1,
+    "Over_Under": 30.5,
+    "Label": 1
+    },
+
+    {
+    "Game": 4,
+    "Opponent": "UTA",
+    "Prev_5_Points": 21.8,
+    "Prev_5_FG%": 53.7,
+    "Prev_5_3P%": 39.7,
+    "Opp_Def_Rating": 107.2,
+    "Is_Home": 0,
+    "Over_Under": 28.5,
+    "Label": 1
+    }
+]
