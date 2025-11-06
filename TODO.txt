@@ -1,17 +1,24 @@
 TODO November:
+1. Automatically use api to add data to json or database
 2. Variables to put into logical regression model:
-  - PPG Last 10 games
-  - USG% 
-  - PER 
-  - TS% & eFG% last 10 games
-  - Opponent Defensive Rating
-  - History vs opponent
-  - Situational Home/Away, Back to Back, Injuries/Minutes
-  - Vegas prediction lines & if player went over or under
+  - Opponent name
+  - PPG Last 5 games
+  - FG% last 5 games
+  - TS% & eFG% last 5 games
+  - USG% last 5 games
+  - PER last 5 games
+  - Opponent Defensive Rating season
+  - PPG vs opponent historically
+  - Situational Home/Away, Back to Back, Injuries/Minutes 
+  - Vegas projections & if player went over or under = label
 
 TABLE:
-Row, Player's games
-Column: Game_ID, Player, Opponent, Historic ppg vs opponent, and other variables
+Row, Label
+Column: all other vars, but not game and opponent
+x = vars in 2. 
+y = label output
+
+3. What model to use?
 
 Soon-ish preferrably:
 Understand NumPy, Matplotlib, Pandas, and Sci-kit learn libraries
