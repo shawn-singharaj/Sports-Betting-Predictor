@@ -1,10 +1,18 @@
-Wed 11/3:
-1. Pytorch tutorial
-2. What data parameters to use to insert in the regression model; e.g. injuries, player form, opponent form, advanced stats, etc.
-4. Organize data into a table, for points for example, use the same number of parameters every time? 
-  One column = opponent team, row column = ppg in the past vs team
-5. Regression model to make predictions
+TODO November:
+2. Variables to put into logical regression model:
+  - PPG Last 10 games
+  - USG% 
+  - PER 
+  - TS% & eFG% last 10 games
+  - Opponent Defensive Rating
+  - History vs opponent
+  - Situational Home/Away, Back to Back, Injuries/Minutes
+  - Vegas prediction lines & if player went over or under
 
+TABLE:
+Row, Player's games
+Column: Game_ID, Player, Opponent, Historic ppg vs opponent, and other variables
 
 Soon-ish preferrably:
 Understand NumPy, Matplotlib, Pandas, and Sci-kit learn libraries
+
