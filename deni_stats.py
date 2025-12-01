@@ -34,7 +34,7 @@ SEASON_START_DATE = "2025-10-20T00:00:00"
 
 # Deni is player
 player = [p for p in players.get_players() if p['full_name'] == 'Deni Avdija'][0]
-deni_id = player['id'] # get his id
+deni_id = player['id']
 
 """
 playergamelog Columns: 
@@ -91,41 +91,27 @@ deni_season_stats = p_seasonstats[p_seasonstats['PLAYER_ID'] == deni_id].iloc[0]
 deni_ppg = deni_season_stats['PTS'] / deni_season_stats['GP']
 
 # Deni's game by game stats
-p_gamelog = playergamelog.PlayerGameLog(player_id=deni_id, season='2025-26').get_data_frames()[0]
+p_gamelog_26 = playergamelog.PlayerGameLog(player_id=deni_id, season='2025-26').get_data_frames()[0]
+p_gamelog_25 = playergamelog.PlayerGameLog(player_id=deni_id, season='2024-25').get_data_frames()[0]
+p_gamelog = pd.concat([p_gamelog_26, p_gamelog_25], ignore_index=True)
+
 # Blazers game by game stats
 BLAZERS_ID = deni_season_stats['TEAM_ID']
-t_gamelog = teamgamelogs.TeamGameLogs(team_id_nullable=BLAZERS_ID, season_nullable='2025-26').get_data_frames()[0]
+t_gamelog_26 = teamgamelogs.TeamGameLogs(team_id_nullable=BLAZERS_ID, season_nullable='2025-26').get_data_frames()[0]
+t_gamelog_25 = teamgamelogs.TeamGameLogs(team_id_nullable=BLAZERS_ID, season_nullable='2025-26').get_data_frames()[0]
+t_gamelog = pd.concat([t_gamelog_26, t_gamelog_25], ignore_index=True)
 
 # filter games that started in 2025-26 season
 curr_season_t_logs = t_gamelog.loc[t_gamelog['GAME_DATE'] > SEASON_START_DATE]
 
-p_gamelog = p_gamelog.sort_values("GAME_DATE").reset_index(drop=True)
-curr_season_t_logs = curr_season_t_logs.sort_values("GAME_DATE").reset_index(drop=True)
-
+# Sort games by most recent game, reverse list
+# p_gamelog = p_gamelog.sort_values("GAME_DATE").reset_index(drop=True)
+# curr_season_t_logs = curr_season_t_logs.sort_values("GAME_DATE").reset_index(drop=True)
 
 dataset = []
 
-# # stats over 5 games
-# pts = p_gamelog['PTS'].head().sum()
-# fga = p_gamelog['FGA'].head().sum()
-# fgm = p_gamelog['FGM'].head().sum()
-# fta = p_gamelog['FTA'].head().sum()
-# fg3m = p_gamelog['FG3M'].head().sum()
-# tov = p_gamelog['TOV'].head().sum()
-# min = p_gamelog['MIN'].head().sum()
-# tfga = t_gamelog['FGA'].head().sum()
-# tfta = t_gamelog['FTA'].head().sum()
-# ttov = t_gamelog['TOV'].head().sum()
 
-
-# Prev_5_Points = pts / 5
-# Prev_5_FG = fgm / fga
-# Prev_5_TS = pts / (2 * (fga + 0.44 * fta))
-# Prev_5_eFG = (fgm + 0.5 * fg3m) / fga
-# Prev_5_USG = ((fga + 0.44 * fta + tov) * 240) / (min * (tfga + 0.44 * tfta + ttov)) * 100
-
-
-for i in range(len(curr_season_t_logs)):
+for i in range((len(p_gamelog) - 5)):
 
     last5 = p_gamelog.iloc[i+1:i+6]
 
@@ -152,7 +138,7 @@ for i in range(len(curr_season_t_logs)):
     Prev_5_USG = ((fga + 0.44 * fta + tov) * 240) / (minutes * (tfga + 0.44 * tfta + ttov)) * 100 if (minutes * (tfga + 0.44 * tfta + ttov)) > 0 else 0
 
     game_entry = {
-        "Game": int(len(curr_season_t_logs) - i),
+        "Game": int(len(p_gamelog) - i),
         "Opponent": p_gamelog.iloc[i]['MATCHUP'].split(" ")[-1],
         "Prev_5_Points": Prev_5_Points,
         "Prev_5_FG": Prev_5_FG,
