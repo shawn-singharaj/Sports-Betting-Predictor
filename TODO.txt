@@ -16,3 +16,20 @@ Column: Game_ID, Player, Opponent, Historic ppg vs opponent, and other variables
 Soon-ish preferrably:
 Understand NumPy, Matplotlib, Pandas, and Sci-kit learn libraries
 
+
+TODO (added on DEC 27):
+- edit the features to include:
+- Minutes_Above_Avg
+- Minutes_Change
+- USG_Change
+- Opponent_DefRtg
+- Opponent_Pace
+- Game_Total (if you have Vegas data)
+- Spread (optional)
+- Home_Impact
+- Is_Starting
+- Is_BackToBack
+- Prev_5_TS
+- Prev_5_eFG
+- Prev_5_Points
+- Rest_Days
