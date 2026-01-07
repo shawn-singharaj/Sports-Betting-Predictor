@@ -1,4 +1,5 @@
 # shawn
+# pip install nba_api pandas
 
 from nba_api.stats.endpoints import (
     playercareerstats,
